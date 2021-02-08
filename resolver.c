@@ -407,7 +407,6 @@ char *do_resolve(struct addr_storage *addr) {
 
 void resolver_worker(void* ignored) {
     pthread_mutex_lock(&resolver_queue_mutex);
-    sethostent(1);
     while(1) {
         /* Wait until we are told that an address has been added to the 
          * queue. */
